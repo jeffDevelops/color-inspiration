@@ -12,27 +12,40 @@ import UIKit
 extension String: Error {}
 
 struct Color {
-    var color: UIColor
+    var color: UIColor {
+        get {
+            return UIColor.init(red: r, green: g, blue: b, alpha: a)
+        }
+    }
     
     var r: CGFloat
     var g: CGFloat
     var b: CGFloat
     var a: CGFloat
     
-    var hsl: String
-    var rgb: String
-    var hex: String
+    var hsla: String {
+        get {
+            return HSL.getHSLFromRGB(r: r, g: g, b: b, a: a)
+        }
+    }
+    
+    var rgba: String {
+        get {
+            return "rgb(\(Int((r * 255).rounded())), \(Int((g * 255).rounded())), \(Int((b * 255).rounded())), \(String(format: "%.2f", ceil(a * 100) / 100)))"
+        }
+    }
+    
+    var hex: String {
+        get {
+            return "#\(String(Int((r * 255).rounded()), radix: 16))\(String(Int((g * 255).rounded()), radix: 16))\(String(Int((b * 255).rounded()), radix: 16))"
+        }
+    }
     
     init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-        self.color = UIColor.init(red: r, green: g, blue: b, alpha: a)
         self.r = r
         self.g = g
         self.b = b
         self.a = a
-        
-        self.hsl = HSL.getHSLFromRGB(r: r, g: g, b: b, a: a)
-        self.rgb = "rgb(\(Int((r * 255).rounded())), \(Int((g * 255).rounded())), \(Int((b * 255).rounded())))"
-        self.hex = "#\(String(Int((r * 255).rounded()), radix: 16))\(String(Int((g * 255).rounded()), radix: 16))\(String(Int((b * 255).rounded()), radix: 16))"
     }
 }
 
@@ -120,7 +133,7 @@ class HSL {
             l = CGFloat(0)
         }
         
-        return "hsla(\(Int(h.rounded()))°, \(Int(s.rounded()))%, \(Int(l.rounded()))%, \(Int(a))"
+        return "hsla(\(Int(h.rounded()))°, \(Int(s.rounded()))%, \(Int(l.rounded()))%, \(String(format: "%.2f", ceil(a * 100) / 100)))" // round the float to two decimal places before truncating the string
     }
     
     init(r: CGFloat, g: CGFloat, b: CGFloat) {

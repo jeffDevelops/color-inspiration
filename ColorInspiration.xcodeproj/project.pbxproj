@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5248C7D22499E0800C76DAF /* updateOpacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5248C7C22499E0800C76DAF /* updateOpacity.swift */; };
 		F52CB6D92243BAFE006BE560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CB6D82243BAFE006BE560 /* AppDelegate.swift */; };
 		F52CB6DB2243BAFE006BE560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CB6DA2243BAFE006BE560 /* ViewController.swift */; };
 		F52CB6DE2243BAFE006BE560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F52CB6DC2243BAFE006BE560 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5248C7C22499E0800C76DAF /* updateOpacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateOpacity.swift; sourceTree = "<group>"; };
 		F52CB6D52243BAFE006BE560 /* NoDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F52CB6D82243BAFE006BE560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F52CB6DA2243BAFE006BE560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				F52CB6EB2244A81D006BE560 /* Color.swift */,
 				F5342A362246C7A300044023 /* formatInputs.swift */,
 				F5342A382246C8E200044023 /* setColors.swift */,
+				F5248C7C22499E0800C76DAF /* updateOpacity.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5248C7D22499E0800C76DAF /* updateOpacity.swift in Sources */,
 				F52CB6DB2243BAFE006BE560 /* ViewController.swift in Sources */,
 				F5342A372246C7A300044023 /* formatInputs.swift in Sources */,
 				F52CB6D92243BAFE006BE560 /* AppDelegate.swift in Sources */,

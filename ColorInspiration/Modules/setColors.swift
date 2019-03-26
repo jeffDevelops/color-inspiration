@@ -10,23 +10,21 @@ import Foundation
 import UIKit
 
 func setColors(
-    uiView: UIView,
+    background: UIView,
     button: UIButton,
     hslInput: UITextField,
     rgbInput: UITextField,
-    hexInput: UITextField
-) -> Color {
-    
-    // Randomize the chosen background color
-    let primaryColor = Color(r: CGFloat.random(in: 0...1.0), g: CGFloat.random(in: 0...1.0), b: CGFloat.random(in: 0...1.0), a: 1)
-    
+    hexInput: UITextField,
+    color: Color
+) -> Void {
     // Set the chosen color as the background color of view elements
-    uiView.backgroundColor = primaryColor.color
-    button.setTitleColor(primaryColor.color, for: .normal)
-    // Set the input color values
-    hslInput.text = primaryColor.hsl
-    rgbInput.text = primaryColor.rgb
-    hexInput.text = primaryColor.hex
+    background.backgroundColor = color.color
     
-    return primaryColor
+    // Adjust the opacity to 1 for the button color
+    let buttonColor = Color(r: color.r, g: color.g, b: color.b, a: 1.0);
+    button.setTitleColor(buttonColor.color, for: .normal)
+    // Set the input color values
+    hslInput.text = color.hsla
+    rgbInput.text = color.rgba
+    hexInput.text = color.hex
 }
